@@ -11,6 +11,10 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    //keystore password: 567A2EDD9CB5D2FD
+    //keystore alias: v2ex
+    //keystore alias password: 567A2EDD9CB5D2FD
     buildTypes {
         release {
             minifyEnabled false
