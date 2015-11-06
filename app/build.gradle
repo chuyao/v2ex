@@ -12,13 +12,28 @@ android {
         versionName "1.0"
     }
 
-    //keystore password: 567A2EDD9CB5D2FD
-    //keystore alias: v2ex
-    //keystore alias password: 567A2EDD9CB5D2FD
+    signingConfigs {
+        release {
+            storeFile file("../v2ex.jks")
+            storePassword "567A2EDD9CB5D2FD"
+            keyAlias "v2ex"
+            keyPassword "567A2EDD9CB5D2FD"
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
     }
 }
